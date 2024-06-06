@@ -18,12 +18,15 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from photos.views import index  # Import the new view
+from photos.views import index
+from django.contrib import admin
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('photos.urls')),
+    path('users/', include('users.urls')),  # Authentication URLs
     path('', index),  # Serve the React app for the root URL
 ]
 
