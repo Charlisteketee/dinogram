@@ -8,7 +8,7 @@ class User(models.Model):
 
 class Post(models.Model):
   user = models.ForeignKey(User, on_delete=models.CASCADE)
-  image_url = models.URLField()
+  image_url = models.ImageField(upload_to='images/')
   caption = models.TextField()
 
 
